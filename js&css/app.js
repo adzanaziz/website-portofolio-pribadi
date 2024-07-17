@@ -1,31 +1,43 @@
+// app.ts
+// Penggunaan fungsi di dalam event listener jika diperlukan
 $(document).ready(function () {
-    console.log("Document is ready");
-    $(window).scroll(function () {
-        console.log("Window is scrolling");
-        var scrollTop = $(window).scrollTop() || 0;
-        if (scrollTop > 550) {
-            console.log("Scrolled more than 550px");
-            $('.navbar').addClass('solid');
-            $('.back-to-top').addClass('visible');
-        }
-        else {
-            console.log("Scrolled less than 550px");
-            $('.navbar').removeClass('solid');
-            $('.back-to-top').removeClass('visible');
-        }
+    // Contoh penggunaan fungsi pada event
+    $(".navbar-brand").click(function () {
+        var nama = "Adzandyma Al Aziz";
+        var panjang = hitungPanjangString(nama);
+        console.log("Panjang nama: ".concat(panjang));
     });
+    // Pengaturan smooth scrolling
     $("a").on('click', function (event) {
-        var _a;
-        console.log("Link clicked");
-        if (this.hash !== "") {
+        var _a, _b, _c;
+        // Kode smooth scrolling
+        var target = $(this).attr("href");
+        if (target && target !== "") {
             event.preventDefault();
-            var hash_1 = this.hash;
-            console.log("Hash is: " + hash_1);
+            // Menggunakan conditional operator untuk menangani tipe target
+            var offsetTop = (_c = (_b = (_a = $(target)) === null || _a === void 0 ? void 0 : _a.offset()) === null || _b === void 0 ? void 0 : _b.top) !== null && _c !== void 0 ? _c : 0;
             $('html, body').animate({
-                scrollTop: (_a = $(hash_1).offset()) === null || _a === void 0 ? void 0 : _a.top
+                scrollTop: offsetTop
             }, 800, function () {
-                window.location.hash = hash_1;
+                window.location.hash = target;
             });
         }
     });
 });
+// Event listener untuk klik pada nama
+$(".navbar-brand").on('click', function (event) {
+    var _a, _b, _c;
+    // Misalnya, untuk navigasi ke bagian about pada halaman
+    var target = "#about";
+    // Menggunakan animasi smooth scrolling ke bagian about
+    var offsetTop = (_c = (_b = (_a = $(target)) === null || _a === void 0 ? void 0 : _a.offset()) === null || _b === void 0 ? void 0 : _b.top) !== null && _c !== void 0 ? _c : 0;
+    $('html, body').animate({
+        scrollTop: offsetTop
+    }, 800);
+    // Tambahkan tindakan lainnya di sini
+    alert("Anda mengklik nama Saya dan Anda akan diarahkan ke bagian About!");
+});
+// Contoh fungsi untuk menghitung panjang string
+function hitungPanjangString(input) {
+    return input.length;
+}
