@@ -1,39 +1,31 @@
 $(document).ready(function () {
+    console.log("Document is ready");
     $(window).scroll(function () {
-        // checks if window is scrolled more than 500px, adds/removes solid class
-        if ($(this).scrollTop() > 550) {
+        console.log("Window is scrolling");
+        var scrollTop = $(window).scrollTop() || 0;
+        if (scrollTop > 550) {
+            console.log("Scrolled more than 550px");
             $('.navbar').addClass('solid');
             $('.back-to-top').addClass('visible');
-        } else {
+        }
+        else {
+            console.log("Scrolled less than 550px");
             $('.navbar').removeClass('solid');
             $('.back-to-top').removeClass('visible');
         }
-
     });
-});
-
-
-$(document).ready(function () {
-    // Add smooth scrolling to all links
     $("a").on('click', function (event) {
-
-        // Make sure this.hash has a value before overriding default behavior
+        var _a;
+        console.log("Link clicked");
         if (this.hash !== "") {
-            // Prevent default anchor click behavior
             event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            var hash_1 = this.hash;
+            console.log("Hash is: " + hash_1);
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: (_a = $(hash_1).offset()) === null || _a === void 0 ? void 0 : _a.top
             }, 800, function () {
-
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
+                window.location.hash = hash_1;
             });
-        } // End if
+        }
     });
 });
