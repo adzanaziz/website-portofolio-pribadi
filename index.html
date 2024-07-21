@@ -7,16 +7,22 @@
   <meta name="description" content="Portfolio Adzandyma Al Aziz">
   <title>Portfolio Me</title>
   <link rel="stylesheet" href="js&css/style.css" />
+  
+
 </head>
 
-<body>
+<body class="stars" style="background-image: url('img/stars.png');">
+
+
   <div id="loading-screen">
     <div class="spinner"></div>
   </div>
 
-
+  
   <header class="header">
+    
     <nav class="navbar">
+      
       <div class="navbar-container container">
       <div class="navbar-brand">Adzandyma Al Aziz</div>
         <div class="hamburger-menu">
@@ -31,7 +37,7 @@
         </ul>
       </div>
     </nav>
-    
+  
     <div class="home-content" id="home-page">
       <div class="name">
         <h1>Hi, I'm Adziz</h1>
@@ -44,14 +50,18 @@
       </div>
     </div>
   </header>
-  <section class="about-me" id="about">
-    <div class="container">
+
+  <section class="about-me" id="about" >
+    <div class="container spectrum-animation">
       <div class="about-content">
         <div class="left-content">
           <div>
             <h1 class="about-heading">About Me</h1>
           </div>
-          <img src="https://cdn.pixabay.com/photo/2024/06/22/15/26/ai-generated-8846525_960_720.png" alt="image" />
+          <div class="right">
+            <img src="img/hero.png" alt="image" />
+          </div>
+          
           <p>
             Saya Adzandyma Al Aziz, Biasa di panggil Adziz, Mahasiswa dari Universitas Muhammadiyah Sumatera Utara, Saya sekarang menempuh kuliah di Semester 6 Program Studi Teknologi Informasi. Saya suka membuat hal-hal yang menarik di dalam sebuah website. Saya tidak bisa berhenti belajar hal-hal baru,Semakin banyak,semakin baik.
           </p>
@@ -62,12 +72,15 @@
           </div>
         </div>
        <!-- skill bar -->
-       
       </div>
-      
     </div>
-  </section>
-
+    <br><br>
+    <!-- tag cloud -->
+        <section style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <div class="section-title">Tech Favorit Ngoding❤️‍🔥</div>
+          <div class="tagcloud"></div>
+        </section>
+    <!-- projek kecil -->
   <section id="my-works">
     <div class="portfolio">
       <div class="proj-heading">
@@ -109,7 +122,7 @@
       </div>
     </div>
   </section>
-
+  </section>
 
   <div class="contact" id="contact-me">
     <div class="container">
@@ -136,16 +149,9 @@
 <script src="js&css/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const menuItems = document.querySelector('.menu-items');
+<script src="js/tagcloud/tagcloud.min.js"></script>
+<script src="js/tagcloud/script.js"></script>
 
-    hamburger.addEventListener('click', function() {
-      menuItems.classList.toggle('active');
-    });
-  });
-</script>
 </body>
 
 </html>
