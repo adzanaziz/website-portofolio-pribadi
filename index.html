@@ -18,8 +18,11 @@
   <header class="header">
     <nav class="navbar">
       <div class="navbar-container container">
-        <div>
-          <h1 class="navbar-brand">Adzandyma Al Aziz</h1>
+      <div class="navbar-brand">Adzandyma Al Aziz</div>
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <ul class="menu-items">
           <li><a href="#about">About</a></li>
@@ -50,7 +53,7 @@
           </div>
           <img src="https://cdn.pixabay.com/photo/2024/06/22/15/26/ai-generated-8846525_960_720.png" alt="image" />
           <p>
-            Saya Adzandyma Al Aziz , Biasa di panggil Adziz , Mahasiswa dari Universitas Muhammadiyah Sumatera Utara , Saya sekarang menempuh kuliah di Semester 6 Program Studi Teknologi Informasi. Saya suka membuat hal-hal yang menarik di dalam sebuah website. Saya tidak bisa berhenti belajar hal-hal baru , Semakin banyak , semakin baik.
+            Saya Adzandyma Al Aziz, Biasa di panggil Adziz, Mahasiswa dari Universitas Muhammadiyah Sumatera Utara, Saya sekarang menempuh kuliah di Semester 6 Program Studi Teknologi Informasi. Saya suka membuat hal-hal yang menarik di dalam sebuah website. Saya tidak bisa berhenti belajar hal-hal baru,Semakin banyak,semakin baik.
           </p>
           <div class="work-arrow">
             <p>
@@ -58,53 +61,13 @@
             </p>
           </div>
         </div>
-        <div class="skills">
-          <div class="right-content">
-            <div>
-              <h1 class="skills-heading">My Skills</h1>
-            </div>
-            <div class="skills-bar">
-              <div class="bar">
-                <div class="info">
-                  <span>HTML</span>
-                </div>
-                <div class="progress-line"><span class="html"></span></div>
-                <div class="bar">
-                  <div class="info">
-                    <span>CSS</span>
-                  </div>
-                  <div class="progress-line"><span class="css"></span></div>
-                  <div class="bar">
-                    <div class="info">
-                      <span>BOOTSTRAP</span>
-                    </div>
-                    <div class="progress-line"><span class="bootstrap"></span></div>
-                    <div class="bar">
-                      <div class="info">
-                        <span>JAVASCRIPT</span>
-                      </div>
-                      <div class="progress-line"><span class="javascript"></span></div>
-                      <div class="bar">
-                        <div class="info">
-                          <span>C#</span>
-                        </div>
-                        <div class="progress-line"><span class="c"></span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="work-arrow-2">
-              <p>
-                <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
+       <!-- skill bar -->
+       
       </div>
+      
     </div>
   </section>
+
   <section id="my-works">
     <div class="portfolio">
       <div class="proj-heading">
@@ -142,12 +105,12 @@
                   class="fas fa-external-link-alt"></i></a>
             </button>
           </div>
-
         </div>
-    
       </div>
     </div>
   </section>
+
+
   <div class="contact" id="contact-me">
     <div class="container">
       <div class="contact-content">
@@ -169,9 +132,20 @@
 
   
   <!-- JAVASCRIPT -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js&css/app.js"></script>
-  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const menuItems = document.querySelector('.menu-items');
+
+    hamburger.addEventListener('click', function() {
+      menuItems.classList.toggle('active');
+    });
+  });
+</script>
 </body>
 
 </html>
