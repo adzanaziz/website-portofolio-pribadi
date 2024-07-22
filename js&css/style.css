@@ -7,19 +7,55 @@
 }
 
 body {
-  font-family:  "Noto Sans", sans-serif;
-  background-color: #000; 
+  font-family: "Noto Sans", sans-serif;
+  background-color: #000;
+  color: #f0f0e6; /* Added text color for better readability */
+  overflow:hidden;
+  
 }
+
+
+
+body {
+  overflow-y: scroll; /* Enables vertical scrolling */
+  overscroll-behavior: contain; /* Prevents overscroll glow effect */
+  background-color: #000; /* Ensures background color is black */
+}
+
+
 
 header {
   height: 100vh;
 }
 
-.container {
+.container {  
   max-width: 1200px;
   width: 90%;
   margin: auto;
 }
+
+#myBtn {
+  display: none;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+  bottom: 55px;
+  right: 30px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: grey;
+  color: #000;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 50%;
+}
+
+#myBtn:hover {
+  background-color: #404040;
+}
+
 /* Stars Twinkle and Move Animation */
 @keyframes twinkle {
   0%, 20%, 40%, 60%, 80%, 100% {
@@ -40,7 +76,7 @@ header {
 }
 
 .stars {
-  animation: twinkle 2s infinite ease-in-out, moveStars 200s linear infinite;
+  animation:moveStars 200s linear infinite;
 }
 
 

@@ -7,13 +7,48 @@
   <meta name="description" content="Portfolio Adzandyma Al Aziz">
   <title>Portfolio Me</title>
   <link rel="stylesheet" href="js&css/style.css" />
-  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
 </head>
 
 <body class="stars" style="background-image: url('img/stars.png');">
-
-
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </button>
+  <script>
+    var mybutton = document.getElementById("myBtn");
+     window.onscroll = function () {
+ 
+       scrollFunction();
+     };
+     function scrollFunction() {
+       if (
+ 
+         document.body.scrollTop > 300 ||
+         document.documentElement.scrollTop > 300
+       ) {
+ 
+         mybutton.style.display = "block";
+       } else {
+         mybutton.style.display = "none";
+ 
+       }
+ 
+     }
+ 
+     function topFunction() {
+ 
+       const scrollDuration = 1000; 
+       const scrollStep = -window.scrollY / (scrollDuration / 15);
+       const scrollInterval = setInterval(function(){
+ 
+         if (window.scrollY != 0) {
+           window.scrollBy(0, scrollStep);
+         } else clearInterval(scrollInterval); 
+       }, 15);
+     }
+ </script>
   <div id="loading-screen">
     <div class="spinner"></div>
   </div>
@@ -141,6 +176,7 @@
       </div>
     </div>
   </div>
+  
 
 
   
@@ -151,6 +187,7 @@
 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
 <script src="js/tagcloud/tagcloud.min.js"></script>
 <script src="js/tagcloud/script.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 
