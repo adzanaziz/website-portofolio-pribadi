@@ -4,22 +4,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transform-origin: 70% 70%;
 }
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: #000;
-  color: #f0f0e6; /* Added text color for better readability */
+  background-color: #000; 
   overflow:hidden;
-  
 }
 
 
 
 body {
-  overflow-y: scroll; /* Enables vertical scrolling */
-  overscroll-behavior: contain; /* Prevents overscroll glow effect */
-  background-color: #000; /* Ensures background color is black */
+  overflow-y: scroll; 
+  background-color: #000; 
 }
 
 
@@ -91,7 +89,16 @@ header {
 .navbar-brand {
   color: #f0f0e6;
   font-weight: 400;
-  font-size:1.5rem;
+  font-size:2rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.set-time {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 1.2rem;
+  color: #f0f0e6;
+
 }
 
 .work-arrow,
@@ -176,16 +183,43 @@ header {
   width: 100%;
   text-align: center;
 }
-
-.home-content .name h1 {
-  font-size: 2.2rem;
-  text-align: center;
+@keyframes holla {
+  0% {
+      transform: rotate( 0.0deg)
+  }
+  10% {
+      transform: rotate(14.0deg)
+  }
+  20% {
+      transform: rotate(-8.0deg)
+  }
+  30% {
+      transform: rotate(14.0deg)
+  }
+  40% {
+      transform: rotate(-4.0deg)
+  }
+  50% {
+      transform: rotate(10.0deg)
+  }
+  60% {
+      transform: rotate( 0.0deg)
+  }
+  100% {
+      transform: rotate( 0.0deg)
+  }
 }
 
-.home-content .name p {
-  color: #f0f0e6;
-  font-size: 1.5rem;
+.holla {
+  margin: 0 0 5px 5px;
+  transform-origin: 70% 70%;
+  animation: holla 3s infinite;
+  display: inline-block;
+  
 }
+
+
+
 
 .animated_text h1 {
   -webkit-text-stroke: 1px #cbbcbc;
@@ -634,4 +668,41 @@ header {
   }
 }
 
+/* skill bar */
+.skills {
+  margin: 50px 0;
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skill-bar {
+  margin: 10px 0;
+  background: #f3f3f3;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-title {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.skill-bar-fill {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  border-radius: 25px 0 0 25px;
+  transition: width 0.5s ease-in-out;
+}
 

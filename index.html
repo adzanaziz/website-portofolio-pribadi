@@ -12,6 +12,7 @@
 
 </head>
 
+
 <body class="stars" style="background-image: url('img/stars.png');">
   <button onclick="topFunction()" id="myBtn" title="Go to top">
     <i class="fa fa-chevron-up" aria-hidden="true"></i>
@@ -59,12 +60,45 @@
     <nav class="navbar">
       
       <div class="navbar-container container">
+        <div class="set-time">
+          <!-- Menampilkan Jam (Aktif) -->
+          <div id="clock"></div>
+          <script type="text/javascript">
+              function showTime() {
+                  var today = new Date();
+                  var curr_hour = today.getHours();
+                  var curr_minute = today.getMinutes();
+                  var curr_second = today.getSeconds();
+                  var a_p = curr_hour >= 12 ? "PM" : "AM";
+                  
+                  curr_hour = checkTime(curr_hour);
+                  curr_minute = checkTime(curr_minute);
+                  curr_second = checkTime(curr_second);
+                  
+                  document.getElementById('clock').innerHTML = curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+              }
+
+              function checkTime(i) {
+                  if (i < 10) {
+                      i = "0" + i;
+                  }
+                  return i;
+              }
+
+              function checkTime(hour) {
+                  return hour < 10 ? "0" + hour : hour;
+              }
+
+              setInterval(showTime, 500);
+          </script>
+      </div>
       <div class="navbar-brand">Adzandyma Al Aziz</div>
         <div class="hamburger-menu">
           <span></span>
           <span></span>
           <span></span>
         </div>
+        
         <ul class="menu-items">
           <li><a href="#about">About</a></li>
           <li><a href="#my-works">Projek Kecil</a></li>
@@ -75,7 +109,8 @@
   
     <div class="home-content" id="home-page">
       <div class="name">
-        <h1>Hi, I'm Adziz</h1>
+        <h1>Hi, I am Adziz <span class="holla">&#128075</span>,</h1>
+        
         <div class="animated_text">
         <h1 class = "tittle">A Web Developer in training.</h1>
       </div>
@@ -88,7 +123,7 @@
 
   <section class="about-me" id="about" >
     <div class="container spectrum-animation">
-      <div class="about-content">
+      <div class="about-content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div class="left-content">
           <div>
             <h1 class="about-heading">About Me</h1>
@@ -96,25 +131,25 @@
           <div class="right">
             <img src="img/hero.png" alt="image" />
           </div>
-          
           <p>
             Saya Adzandyma Al Aziz, Biasa di panggil Adziz, Mahasiswa dari Universitas Muhammadiyah Sumatera Utara, Saya sekarang menempuh kuliah di Semester 6 Program Studi Teknologi Informasi. Saya suka membuat hal-hal yang menarik di dalam sebuah website. Saya tidak bisa berhenti belajar hal-hal baru,Semakin banyak,semakin baik.
           </p>
+          
           <div class="work-arrow">
             <p>
               <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
             </p>
           </div>
         </div>
-       <!-- skill bar -->
       </div>
-    </div>
-    <br><br>
+    <br>
     <!-- tag cloud -->
         <section style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
           <div class="section-title">Tech Favorit Ngoding❤️‍🔥</div>
           <div class="tagcloud"></div>
         </section>
+
+        
     <!-- projek kecil -->
   <section id="my-works">
     <div class="portfolio">
@@ -122,6 +157,8 @@
         <h1>Projek Kecil</h1>
       </div>
       <div class="portfolio-content container">
+
+        
         <div class="proj-1">
           <img src="img/projekkecil.png" alt="projek kecil">
           <div class="proj1-details">
@@ -139,21 +176,21 @@
           </div>
         </div>
 
-        <div class="proj-2">
-          <img src="img/projekkecil1.png" alt="projek kecil 1">
-          <div class="proj2-details">
-            <i class="fab fa-html5"></i>
-            <i class="fab fa-css3-alt"></i>
-            <h2>sliderimage3dMedan</h2>
-            <p>Build Using HTML,CSS,JAVASCRIPT</p>
-            <button><a href="https://github.com/adzizPe/sliderimage3dMedan" target="blank">View source <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-            <button><a href="https://adzizpe.github.io/sliderimage3dMedan/" target="blank">Try it Live <i
-                  class="fas fa-external-link-alt"></i></a>
-            </button>
-          </div>
-        </div>
+      </div>
+    </div>
+    <div class="proj-2">
+      <img src="img/projekkecil1.png" alt="projek kecil 1">
+      <div class="proj2-details">
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-css3-alt"></i>
+        <h2>sliderimage3dMedan</h2>
+        <p>Build Using HTML,CSS,JAVASCRIPT</p>
+        <button><a href="https://github.com/adzizPe/sliderimage3dMedan" target="blank">View source <i
+              class="fas fa-external-link-alt"></i></a>
+        </button>
+        <button><a href="https://adzizpe.github.io/sliderimage3dMedan/" target="blank">Try it Live <i
+              class="fas fa-external-link-alt"></i></a>
+        </button>
       </div>
     </div>
   </section>
@@ -188,6 +225,7 @@
 <script src="js/tagcloud/tagcloud.min.js"></script>
 <script src="js/tagcloud/script.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 </body>
 

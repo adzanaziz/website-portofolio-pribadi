@@ -41,13 +41,3 @@ window.addEventListener('load', function () {
         }
     }, 2000);
 });
-document.addEventListener('DOMContentLoaded', function () {
-    var hamburgerMenu = document.querySelector('.hamburger-menu');
-    var menuItems = document.querySelector('.menu-items');
-    if (hamburgerMenu && menuItems) {
-        hamburgerMenu.addEventListener('click', function () {
-            hamburgerMenu.classList.toggle('active');
-            menuItems.classList.toggle('active');
-        });
-    }
-});
