@@ -10,9 +10,9 @@ My Portfolio Website
 <hr> <!-- Line -->
 
 Tech Stacks:
- •<h2>HTML</h2>
- •<h2>CSS</h2>
- •<h2>JavaScript</h2>
- •<h2>TypeScript</h2>
- •<h2>Bootstrap</h2>
- •<h2>jQuery</h2>
+<h2> •HTML</h2>
+<h2> •CSS</h2>
+ <h2> •JavaScript</h2>
+ <h2> •TypeScript</h2>
+ <h2> •Bootstrap</h2>
+<h2> •jQuery</h2>
