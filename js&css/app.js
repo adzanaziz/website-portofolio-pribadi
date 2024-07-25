@@ -21,6 +21,9 @@ $(document).ready(function () {
         }
     });
 });
+$(".hamburger-menu").on('click', function () {
+    $(".navbar-items").toggleClass("show");
+});
 $(".navbar-brand").on('click', function (event) {
     var _a, _b, _c;
     var target = "#about";
@@ -40,4 +43,11 @@ window.addEventListener('load', function () {
             loadingScreen.style.display = 'none';
         }
     }, 2000);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    var hamburger = document.querySelector('.hamburger-menu');
+    var menuItems = document.querySelector('.menu-items');
+    hamburger.addEventListener('click', function () {
+        menuItems.classList.toggle('active');
+    });
 });

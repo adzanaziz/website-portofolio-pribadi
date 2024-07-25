@@ -25,6 +25,9 @@ $(document).ready(function() {
         }
     });
 });
+$(".hamburger-menu").on('click', () => {
+    $(".navbar-items").toggleClass("show");
+});
 
 $(".navbar-brand").on('click', function(event) {
    
