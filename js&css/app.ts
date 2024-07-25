@@ -11,12 +11,11 @@ $(document).ready(function() {
     
     
     $("a").on('click', function(event) {
-        // Kode smooth scrolling
         let target = $(this).attr("href");
-        if (target && target !== "") {
+        // Hanya mencegah default jika href adalah anchor pada halaman yang sama
+        if (target.startsWith("#")) {
             event.preventDefault();
-             
-             let offsetTop = $(target)?.offset()?.top ?? 0;
+            let offsetTop = $(target).offset()?.top ?? 0;
             $('html, body').animate({
                 scrollTop: offsetTop
             }, 800, function() {
@@ -57,4 +56,3 @@ window.addEventListener('load', () => {
     }
   }, 2000);
 });
-

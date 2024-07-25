@@ -7,12 +7,12 @@ $(document).ready(function () {
         console.log("Panjang nama: ".concat(panjang));
     });
     $("a").on('click', function (event) {
-        var _a, _b, _c;
-        // Kode smooth scrolling
+        var _a, _b;
         var target = $(this).attr("href");
-        if (target && target !== "") {
+        // Hanya mencegah default jika href adalah anchor pada halaman yang sama
+        if (target.startsWith("#")) {
             event.preventDefault();
-            var offsetTop = (_c = (_b = (_a = $(target)) === null || _a === void 0 ? void 0 : _a.offset()) === null || _b === void 0 ? void 0 : _b.top) !== null && _c !== void 0 ? _c : 0;
+            var offsetTop = (_b = (_a = $(target).offset()) === null || _a === void 0 ? void 0 : _a.top) !== null && _b !== void 0 ? _b : 0;
             $('html, body').animate({
                 scrollTop: offsetTop
             }, 800, function () {
@@ -43,11 +43,4 @@ window.addEventListener('load', function () {
             loadingScreen.style.display = 'none';
         }
     }, 2000);
-});
-document.addEventListener("DOMContentLoaded", function () {
-    var hamburger = document.querySelector('.hamburger-menu');
-    var menuItems = document.querySelector('.menu-items');
-    hamburger.addEventListener('click', function () {
-        menuItems.classList.toggle('active');
-    });
 });
