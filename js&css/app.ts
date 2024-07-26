@@ -56,3 +56,12 @@ window.addEventListener('load', () => {
     }
   }, 2000);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const menuItems = document.querySelector('.menu-items');
+
+    hamburger.addEventListener('click', () => {
+        menuItems.classList.toggle('active');
+    });
+});

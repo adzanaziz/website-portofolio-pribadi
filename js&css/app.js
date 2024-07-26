@@ -44,3 +44,10 @@ window.addEventListener('load', function () {
         }
     }, 2000);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    var hamburger = document.querySelector('.hamburger-menu');
+    var menuItems = document.querySelector('.menu-items');
+    hamburger.addEventListener('click', function () {
+        menuItems.classList.toggle('active');
+    });
+});
