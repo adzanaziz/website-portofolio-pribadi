@@ -32,27 +32,33 @@ header {
   margin: auto;
 }
 
+/* Tombol kembali ke atas */
 #myBtn {
   display: none;
   position: fixed;
-  height: 40px;
-  width: 40px;
-  z-index: 100;
-  bottom: 55px;
-  right: 30px;
-  font-size: 20px;
+  height: 44px;
+  width: 44px;
+  z-index: 9999;
+  bottom: 40px;
+  right: 24px;
+  font-size: 18px;
   border: none;
   outline: none;
-  background-color: grey;
-  color: #000;
+  background: linear-gradient(180deg,#00ffff,#00b3ff);
+  color: #001;
   cursor: pointer;
-  padding: 0px;
+  padding: 8px;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,255,255,0.08);
 }
 
-#myBtn:hover {
-  background-color: #404040;
-}
+/* class untuk menampilkan */
+#myBtn.show { display: inline-flex !important; }
+
+/* pastikan body bisa di-scroll (jika ada rule yang menutup) */
+body { overflow-y: auto !important; }
 
 /* Stars Twinkle and Move Animation */
 @keyframes twinkle {
@@ -301,18 +307,17 @@ header {
 
 .angle-down-icon {
   position: absolute;
-  bottom: -130%;
+  bottom: -68px;            /* tampil dekat tengah bawah header */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   font-size: 2rem;
   border: 9px solid #00ffff;
   border-radius: 30%;
-}
-
-.angle-down-icon a {
-  text-decoration: none;
+  z-index: 50;
   color: #00ffff;
-  padding: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* About Me */
@@ -752,11 +757,6 @@ header {
   transform: scale(1.2);
 }
 
-/* ... existing code ... */
-
-
-
-
 /* Loading Screen and Spinner */
 #loading-screen {
   position: fixed;
@@ -834,113 +834,122 @@ header {
   animation: spectrum 4s linear infinite;
 }
 
-@media (max-width: 992px) {
+.connect { padding: 3rem 0; text-align: center; color: #e6ffff; }
+.connect .heading { margin-bottom: 1rem; }
+.connect-icons { display:flex; gap:1.2rem; justify-content:center; align-items:center; }tent:center; align-items:center; }
+.icon-link { display:inline-flex; width:56px; height:56px; align-items:center; justify-content:center; border-radius:12px; background: rgba(255,255,255,0.02); border:1px solid rgba(0,255,255,0.06); color: #00ffff; text-decoration:none; transition: transform .15s ease, box-shadow .15s ease; }ckground: rgba(255,255,255,0.02); border:1px solid rgba(0,255,255,0.06); color: #00ffff; text-decoration:none; transition: transform .15s ease, box-shadow .15s ease; }
+.icon-link svg { width:28px; height:28px; display:block; color: inherit; }
+.icon-link:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,255,255,0.06); }hadow: 0 12px 30px rgba(0,255,255,0.06); }
+/* responsive */
+@media (max-width:480px){ .icon-link{width:48px;height:48px} .icon-link svg{width:22px;height:22px} }nk svg{width:22px;height:22px} }
+
+@media (max-width: 992px) {@media (max-width: 992px) {
   .navbar-container {
     flex-direction: column;
     height: auto;
-    justify-content: flex-end;
+    justify-content: flex-end;    justify-content: flex-end;
     position: relative;
   }
 
   .menu-items {
     display: none;
-    flex-direction: column;
+    flex-direction: column;    flex-direction: column;
     align-items: center;
   }
 
-  .menu-items.active {
+  .menu-items.active {ive {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    flex-direction: column;umn;
+    align-items: center; align-items: center;
+  }  }
 
-  .hamburger-menu {
+  .hamburger-menu {{
     display: flex;
     position: absolute; 
-    top: 0; 
-    right: 1rem;
+    top: 0;  top: 0; 
+    right: 1rem;    right: 1rem;
     
   }
-  .hamburger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(9px, 9px);
-    
-  }
+  .hamburger-menu.active span:nth-child(1) {an:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 9px);deg) translate(9px, 9px);
+     
+  }  }
   
-  .hamburger-menu.active span:nth-child(2) {
+  .hamburger-menu.active span:nth-child(2) {active span:nth-child(2) {
     opacity: 0;
    
   }
   
-  .hamburger-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(9px, -6px);
+  .hamburger-menu.active span:nth-child(3) {hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(9px, -6px); -6px);
    
   }
-  .menu-items li {
-    padding: 0.5rem;
+  .menu-items li {menu-items li {
+    padding: 0.5rem;  padding: 0.5rem;
   }
 
-  .home-content .name h1 {
-    font-size: 1.8rem;
-  }
+  .home-content .name h1 {home-content .name h1 {
+    font-size: 1.8rem; font-size: 1.8rem;
+  }}
 
   .home-content .name p {
-    font-size: 1.2rem;
+    font-size: 1.2rem; font-size: 1.2rem;
   }
 
-  .about-content img {
-    height: 150px;
-    width: 120px;
+  .about-content img { {
+    height: 150px; height: 150px;
+    width: 120px;    width: 120px;
   }
 
-  .about-content p {
-    font-size: 1rem;
+  .about-content p {about-content p {
+    font-size: 1rem;    font-size: 1rem;
     padding: 0 1.5rem;
   }
 
-  .about-me .about-content {
-    flex-direction: column;
-    align-items: center;
+  .about-me .about-content {  .about-me .about-content {
+    flex-direction: column;lumn;
+    align-items: center;enter;
   }
 
-  .about-content .left-content,
-  .about-content .right-content {
-    flex-basis: 100%;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
+  .about-content .left-content,  .about-content .left-content,
+  .about-content .right-content {ght-content {
+    flex-basis: 100%;;
+    text-align: center;;
+    margin-bottom: 1rem; margin-bottom: 1rem;
+  }  }
 
   .proj-1,
   .proj-2 {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; flex-direction: column;
+    align-items: center;    align-items: center;
   }
 
   .proj-1 img,
   .proj-2 img {
     height: 250px;
-    width: 300px;
-    margin-right: 0;
-    margin-bottom: 1rem;
+    width: 300px; width: 300px;
+    margin-right: 0;    margin-right: 0;
+    margin-bottom: 1rem;-bottom: 1rem;
   }
 
-  .proj-1 .proj1-details,
-  .proj-2 .proj2-details {
-    width: 100%;
-    text-align: center;
+  .proj-1 .proj1-details,,
+  .proj-2 .proj2-details {proj-2 .proj2-details {
+    width: 100%;    width: 100%;
+    text-align: center;: center;
   }
 
-  .proj-1 .proj1-details h2,
-  .proj-2 .proj2-details h2 {
+  .proj-1 .proj1-details h2,details h2,
+  .proj-2 .proj2-details h2 {ails h2 {
     font-size: 1.5rem;
   }
 
-  .proj-1 .proj1-details p,
-  .proj-2 .proj2-details p {
-    font-size: 1rem;
+  .proj-1 .proj1-details p,p,
+  .proj-2 .proj2-details p { {
+    font-size: 1rem;rem;
   }
 
-  .proj-1 .proj1-details button,
-  .proj-2 .proj2-details button {
+  .proj-1 .proj1-details button,  .proj-1 .proj1-details button,
+  .proj-2 .proj2-details button {ton {
     width: 100px;
   }
 
@@ -948,39 +957,39 @@ header {
 
 /* skill bar */
 .skills {
-  margin: 50px 0;
-}
+  margin: 50px 0;argin: 50px 0;
+}}
 
 .skills h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+  text-align: center;ter;
+  margin-bottom: 20px;argin-bottom: 20px;
+}}
 
-.skill-bar {
-  margin: 10px 0;
-  background: #f3f3f3;
-  border-radius: 25px;
-  overflow: hidden;
-  position: relative;
+.skill-bar {.skill-bar {
+  margin: 10px 0;0;
+  background: #f3f3f3;und: #f3f3f3;
+  border-radius: 25px;25px;
+  overflow: hidden; overflow: hidden;
+  position: relative;  position: relative;
 }
 
 .skill-bar-title {
-  position: absolute;
-  left: 10px;
+  position: absolute; position: absolute;
+  left: 10px;  left: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);slateY(-50%);
   font-weight: bold;
 }
 
 .skill-bar-fill {
-  display: block;
-  height: 30px;
-  line-height: 30px;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  color: white;
-  text-align: right;
+  display: block; display: block;
+  height: 30px;  height: 30px;
+  line-height: 30px;x;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);gradient(90deg, #ff8a00, #e52e71);
+  color: white;e;
+  text-align: right;n: right;
   padding-right: 10px;
-  border-radius: 25px 0 0 25px;
-  transition: width 0.5s ease-in-out;
-}
+  border-radius: 25px 0 0 25px;x 0 0 25px;
+  transition: width 0.5s ease-in-out; transition: width 0.5s ease-in-out;
+}}
 

@@ -9,47 +9,39 @@
   <link rel="stylesheet" href="js&css/style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
 </head>
 
 
 <body class="stars" style="background-image: url('img/stars.png');">
-  <button onclick="topFunction()" id="myBtn" title="Go to top">
-    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  <button onclick="topFunction()" id="myBtn" title="Go to top" aria-label="Kembali ke atas">
+    <!-- SVG panah atas (tidak tergantung FontAwesome) -->
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" style="display:block;">
+      <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
   </button>
+
   <script>
-    var mybutton = document.getElementById("myBtn");
-     window.onscroll = function () {
- 
-       scrollFunction();
-     };
-     function scrollFunction() {
-       if (
- 
-         document.body.scrollTop > 300 ||
-         document.documentElement.scrollTop > 300
-       ) {
- 
-         mybutton.style.display = "block";
-       } else {
-         mybutton.style.display = "none";
- 
-       }
- 
-     }
- 
-     function topFunction() {
- 
-       const scrollDuration = 1000; 
-       const scrollStep = -window.scrollY / (scrollDuration / 15);
-       const scrollInterval = setInterval(function(){
- 
-         if (window.scrollY != 0) {
-           window.scrollBy(0, scrollStep);
-         } else clearInterval(scrollInterval); 
-       }, 15);
-     }
- </script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mybutton = document.getElementById('myBtn');
+      function onScroll() {
+        const showAfter = 300;
+        if (window.scrollY > showAfter) mybutton.classList.add('show');
+        else mybutton.classList.remove('show');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // smooth scroll to top
+      window.topFunction = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // inisialisasi: cek posisi awal
+      onScroll();
+    });
+  </script>
   <div id="loading-screen">
     <div class="spinner"></div>
   </div>
@@ -113,7 +105,12 @@
         <h3 class="text-animation">I'am a <span></span></h3>
       
       <div class="angle-down-icon">
-        <a href="#about"><i class="fas fa-angle-down"></i></a>
+        <a href="#about" aria-label="Scroll to about">
+          <!-- SVG panah bawah, pasti tampil -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.41 8.59 12 13.17l4.59-4.58" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
   </header>
@@ -129,12 +126,18 @@
             <img src="img/hero.png" alt="image" />
           </div>
           <p>
-            Saya Adzandyma Al Aziz, Biasa di panggil Adziz, Mahasiswa dari Universitas Muhammadiyah Sumatera Utara, Saya sekarang menempuh kuliah di Semester 6 Program Studi Teknologi Informasi. Saya suka membuat hal-hal yang menarik di dalam sebuah website. Saya tidak bisa berhenti belajar hal-hal baru,Semakin banyak,semakin baik.
+            Saya Adzandyma Al Aziz, Biasa di panggil Adziz, Mahasiswa dari Universitas Muhammadiyah Sumatera Utara, Saya sekarang menempuh kuliah di Program Studi Teknologi Informasi. Saya suka membuat hal-hal yang menarik di dalam sebuah website. Saya tidak bisa berhenti belajar hal-hal baru,Semakin banyak,semakin baik.
           </p>
           
           <div class="work-arrow">
             <p>
-              <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
+              <a href="#projekkecil" class="check-works">
+                Check out my work
+                <!-- Inline SVG panah bawah (tidak tergantung library) -->
+                <svg class="icon-arrow-down" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                </svg>
+              </a>
             </p>
           </div>
         </div>
@@ -259,16 +262,37 @@
       <div id="formMessage"></div>
     </div>
   </section>
-  <section id="connect-with-me">
-    <div class="container">
-      <h1>Connect with Me</h1>
-      <div class="social-icons">
-        <a href="https://github.com/adzizPe" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/zan________dd/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/adzandyma-al-aziz-6b29532b5/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-      </div>
+  <section id="connect-with-me" class="connect">
+  <div class="container connect-inner">
+    <h2 class="heading">Connect with me</h2>
+
+    <div class="connect-icons" role="list">
+      <a role="listitem" class="icon-link" href="mailto:adzandyma@example.com" aria-label="Kirim email" title="Email">
+        <!-- envelope SVG -->
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13A2.5 2.5 0 0 0 21 15.5v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 8.5 12 13 3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <a role="listitem" class="icon-link" href="https://github.com/your-username" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <!-- github SVG -->
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 .5A11.5 11.5 0 0 0 .5 12.01c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.68.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.2.68.8.56A11.5 11.5 0 0 0 12 .5z"/>
+        </svg>
+      </a>
+
+      <a role="listitem" class="icon-link" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <!-- linkedin SVG -->
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="7" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="4" cy="4.5" r="1.5" fill="currentColor"/>
+          <path d="M8 11.5v7M12 8.5a3 3 0 0 1 3 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
   
   <!-- JAVASCRIPT -->
@@ -296,7 +320,33 @@
         console.error('FAILED...', error);
         document.getElementById('formMessage').innerHTML = 'Failed to send message. Please try again later.';
       });
-  });</script>
+  });
+
+  // Copy email
+  document.querySelectorAll('.copy-email').forEach(btn=>{
+    btn.addEventListener('click', async (e)=>{
+      const email = btn.getAttribute('data-email');
+      try { await navigator.clipboard.writeText(email); showToast('Email disalin ke clipboard'); }
+      catch(e){ showToast('Gagal menyalin, silakan salin manual'); }
+    });
+  });
+
+  // Subscribe (contoh: kirim pake EmailJS jika mau)
+  document.getElementById('subscribeForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = this.subscriber_email.value;
+    // jika pakai EmailJS: emailjs.send('service','template',{email});
+    showToast('Terima kasih, ' + email + ' telah terdaftar (contoh)');
+    this.reset();
+  });
+
+  function showToast(msg){
+    const t = document.getElementById('connect-toast');
+    t.textContent = msg;
+    t.hidden = false;
+    setTimeout(()=> t.hidden = true, 3000);
+  }
+  </script>
   
 
 </body>
